@@ -2,7 +2,7 @@
 
 # Base disk image
 #BASE_IMG="/home/ubuntu/.vagrant.d/boxes/trusty64/0/libvirt/box.img"
-BASE_IMG="/home/cp22/kvm-samir/source/disk.img"
+BASE_IMG="/home/cp22/kvm-stack/source/disk.img"
 
 # check if qemu is running
 if [ -e /tmp/qmp-sock-$1 ]

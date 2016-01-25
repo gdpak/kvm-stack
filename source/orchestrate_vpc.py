@@ -26,6 +26,11 @@ machine_list = [
         "vcpus": 2
     },
     {
+        "name" : "haproxy2",
+        "ram": 2048,
+        "vcpus": 2
+    },
+    {
         "name" : "vpc-ctrl1",
         "ram": 4096,
         "vcpus": 2
@@ -135,7 +140,7 @@ def add_dhcphostfile_record(name,ip,mac):
     f = open("/tmp/puppet.hostfile", "w")
     for v in lines:
         f.write("%s\n" % v)
-    f.write("%s,%s,%s\n" % (mac,ip,name) )
+    f.write("%s,%s,%s,30d\n" % (mac,ip,name) )
     f.close()
     # Get the pid of dnsmasq
     pid = os.popen('pidof dnsmasq').read()
